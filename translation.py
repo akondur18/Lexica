@@ -3,7 +3,7 @@ from google.cloud import translate_v2 as translate
 import os
 
 # Set up your Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/Anushka/Lexica/Lexica/.venv/service_account.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(os.path.dirname(__file__), "service_account.json")
 
 def translate_json_list(data_list, target_language):
     """
@@ -29,7 +29,7 @@ def translate_json_list(data_list, target_language):
 if __name__ == "__main__":
     try:
         # Load JSON from a file
-        with open("/Users/Anushka/Lexica/Lexica/.venv/transcription_output.json", "r") as f:
+        with open(os.path.join(os.path.dirname(__file__), "transcription_output.json"), "r") as f:
             data_list = json.load(f)
     except FileNotFoundError:
         # Create a sample JSON list for testing
