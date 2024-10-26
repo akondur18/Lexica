@@ -53,19 +53,19 @@ if __name__ == "__main__":
             data_list = json.load(f)
     except FileNotFoundError:
         # Create a sample JSON list for testing
-        # data_list = [
-        #     "Estoy cuidando de ti hoy",
-        #     " Cuéntame más sobre lo que te escuché hoy. ¿Cuánto tiempo llevas experimentando algún cambio?",
-        #     " ¿Cuándo empezaste a utilizar estos problemas?",
-        #     " ¿Tiene alguna condición crónica que deba tener en cuenta, como diabetes o presión arterial alta?",
-        #     " ¿Qué mensaje?",
-        #     " ¿Cómo ha ido tu sueño últimamente? ¿Has descansado lo suficiente?",
-        #     " fumar o beber alcohol",
-        #     " Estoy bastante preocupado por lo que te está pasando.",
-        #     " Cómo asegurarse."
-        # ]
+        data_list = [
+            "Estoy cuidando de ti hoy",
+            " Cuéntame más sobre lo que te escuché hoy. ¿Cuánto tiempo llevas experimentando algún cambio?",
+            " ¿Cuándo empezaste a utilizar estos problemas?",
+            " ¿Tiene alguna condición crónica que deba tener en cuenta, como diabetes o presión arterial alta?",
+            " ¿Qué mensaje?",
+            " ¿Cómo ha ido tu sueño últimamente? ¿Has descansado lo suficiente?",
+            " fumar o beber alcohol",
+            " Estoy bastante preocupado por lo que te está pasando.",
+            " Cómo asegurarse."
+        ]
 
-        target_language = "en"  # Change this to your desired language code
+    target_language = "en"  # Change this to your desired language code
 
     try:
         translated_list = translate_json_list(data_list, target_language)
