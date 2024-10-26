@@ -3,7 +3,7 @@ import os
 import json  # Import the json module
 
 # Set the path to your service account key file
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/Anushka/Lexica/Lexica/.venv/service_account.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(os.path.dirname(__file__), "service_account.json")
 
 def transcribe_speech_gcs(gcs_uri):
     """Transcribes long audio file using Google Cloud Speech-to-Text API with LongRunningRecognize."""

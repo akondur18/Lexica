@@ -3,7 +3,7 @@ from google.cloud import texttospeech
 import os
 
 # Set up your Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/Anushka/Lexica/Lexica/.venv/service_account.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(os.path.dirname(__file__), "service_account.json")
 
 def text_to_speech(text, output_filename):
     """
@@ -42,7 +42,7 @@ def text_to_speech(text, output_filename):
 
 if __name__ == "__main__":
     # Load the transcript from the JSON file
-    with open("/Users/Anushka/Lexica/Lexica/.venv/translated_output.json", "r") as f:
+    with open( os.path.join(os.path.dirname(__file__), "translated_output.json"), "r") as f:
         data = json.load(f)
 
     # Iterate over each transcript and generate an audio file
