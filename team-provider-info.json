@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lexica-staging-c2c5e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::181586854728:role/amplify-lexica-staging-c2c5e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::181586854728:role/amplify-lexica-staging-c2c5e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lexica-staging-c2c5e-deployment",
+      "UnauthRoleName": "amplify-lexica-staging-c2c5e-unauthRole",
+      "StackName": "amplify-lexica-staging-c2c5e",
+      "StackId": "arn:aws:cloudformation:us-east-1:181586854728:stack/amplify-lexica-staging-c2c5e/901fa830-93a7-11ef-9a9a-0affed2860bb",
+      "AmplifyAppId": "d26wckvewwrce2"
+    }
+  }
+}

@@ -6,10 +6,15 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import { getOverrideProps } from "./utils";
-import { Icon, Text, View } from "@aws-amplify/ui-react";
+import {  Icon, Text, View, Button, Flex, SelectField } from "@aws-amplify/ui-react";
 export default function LandingPage(props) {
+  const navigate = useNavigate()
   const { overrides, ...rest } = props;
+  const handleButtonClick = () => {
+    navigate("/signup"); // Navigate to the SplitScreenWithWords page
+  };
   return (
     <View
       width="370px"
@@ -1788,46 +1793,6 @@ export default function LandingPage(props) {
         right="33.15%"
         {...getOverrideProps(overrides, "Group 1")}
       >
-        <View
-          width="125.68px"
-          height="59.68px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          position="absolute"
-          top="0%"
-          bottom="0%"
-          left="0%"
-          right="0%"
-          padding="0px 0px 0px 0px"
-          backgroundColor="rgba(217,217,217,1)"
-          {...getOverrideProps(overrides, "Rectangle 1165")}
-        ></View>
-        <Text
-          fontFamily="Roboto"
-          fontSize="20px"
-          fontWeight="800"
-          color="rgba(0,0,0,1)"
-          lineHeight="30px"
-          textAlign="center"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="76.41px"
-          height="29.84px"
-          gap="unset"
-          alignItems="unset"
-          position="absolute"
-          top="25%"
-          bottom="25%"
-          left="20%"
-          right="19.2%"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Sign Up"
-          {...getOverrideProps(overrides, "Sign Up")}
-        ></Text>
       </View>
       <View
         padding="0px 0px 0px 0px"
@@ -1843,47 +1808,19 @@ export default function LandingPage(props) {
         left="32.88%"
         right="33.15%"
         {...getOverrideProps(overrides, "Group 3")}
-      >
-        <View
-          width="125.68px"
-          height="59.68px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          position="absolute"
-          top="0%"
-          bottom="0%"
-          left="0%"
-          right="0%"
-          padding="0px 0px 0px 0px"
-          backgroundColor="rgba(217,217,217,1)"
-          {...getOverrideProps(overrides, "Rectangle 1166")}
-        ></View>
-        <Text
-          fontFamily="Roboto"
-          fontSize="20px"
-          fontWeight="800"
-          color="rgba(0,0,0,1)"
-          lineHeight="30px"
-          textAlign="center"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="76.41px"
-          height="29.84px"
-          gap="unset"
-          alignItems="unset"
-          position="absolute"
-          top="25%"
-          bottom="25%"
-          left="20%"
-          right="19.2%"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Log In"
-          {...getOverrideProps(overrides, "Log In")}
-        ></Text>
+      >      
+         <Button
+            width="unset"
+            height="62px"
+            shrink="0"
+            alignSelf="stretch"
+            size="default"
+            isDisabled={false}
+            variation="primary"
+            onClick={handleButtonClick}
+            children="Sign Up"
+            {...getOverrideProps(overrides, "Log In")}
+          ></Button>
       </View>
     </View>
   );
