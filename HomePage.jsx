@@ -6,10 +6,15 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import { getOverrideProps } from "./utils";
 import { Button, Flex, SelectField, Text, View } from "@aws-amplify/ui-react";
 export default function HomePage(props) {
+  const navigate = useNavigate()
   const { overrides, ...rest } = props;
+  const handleButtonClick = () => {
+    navigate("/split-screen-words"); // Navigate to the SplitScreenWithWords page
+  };
   return (
     <Flex
       gap="10px"
@@ -92,9 +97,10 @@ export default function HomePage(props) {
             shrink="0"
             alignSelf="stretch"
             size="default"
-            isDisabled={true}
+            isDisabled={false}
             variation="primary"
-            children="Select"
+            onClick={handleButtonClick}
+            children="Enter"
             {...getOverrideProps(overrides, "Log In")}
           ></Button>
         </Flex>
@@ -110,7 +116,16 @@ export default function HomePage(props) {
           labelHidden={true}
           variation="default"
           {...getOverrideProps(overrides, "SelectField")}
-        ></SelectField>
+        >
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="mandarin">Mandarin</option>
+          <option value="french">French</option>
+          <option value="german">German</option>
+          <option value="arabic">Arabic</option>
+          <option value="hindi">Hindi</option>
+          <option value="portuguese">Portuguese</option>
+        </SelectField>
       </View>
     </Flex>
   );

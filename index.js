@@ -4,6 +4,26 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+ import React from 'react';
+ import ReactDOM from 'react-dom/client';;
+ import App from './App'; // Update this path as necessary
+ 
+ /*ReactDOM.render(
+     <React.StrictMode>
+         <App />
+     </React.StrictMode>,
+     document.getElementById('root')
+ );*/
+
+const root = ReactDOM.createRoot(document.getElementById('root')); // Create a root
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+
 export { default as CloneCreation } from "./CloneCreation";
 export { default as FeedBackPage } from "./FeedBackPage";
 export { default as Frame457 } from "./Frame457";
